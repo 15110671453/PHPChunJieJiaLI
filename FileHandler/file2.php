@@ -43,6 +43,7 @@ if (!file_exists('./a.text'))
 
 }
 //时区设置
+clearstatcache();//清除php的一些缓存 对文件修改时间进行了缓存 每次获取文件信息都检索文件 消耗多
 date_default_timezone_set('PRC');
 echo '文件的修改时间'.date('Y-m-d h:m:s',filectime('./a.php')).'</br>';
 echo '文件内容的修改时间'.date('Y-m-d h:m:s',filemtime('./a.php')).'</br>';
